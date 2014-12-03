@@ -25,8 +25,18 @@ $(document).ready(function(){
 
   //For the delete buttons
   $("delete_buttons").on("click", function(event){
-    var $target = $(event.target);
+    event.preventDefault();
+     $target = $(event.target);
     $target.val("Deleting...");
     $target.attr("disabled", "true");
-  })
+
+    $.ajax({
+      url: $target.attr("action"),
+      type: "DELETE"
+    })
+
+    .done(function() {
+      $target.parents('#character').remove();
+    });
+  });
 });

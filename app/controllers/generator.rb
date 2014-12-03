@@ -27,7 +27,12 @@ end
 
 #DELETE
 delete'/character_bio/:id' do
-  character = OriginalCharacter.find(params[:id])
-  character.destroy
-  redirect('/')
+  if request.xhr?
+    character.destroy
+    redirect('/user/#{session[:user_id]}')
+  else
+    character = OriginalCharacter.find(params[:id])
+    character.destroy
+    redirect('/')
+  end
 end
