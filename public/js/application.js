@@ -1,6 +1,6 @@
 $(document).ready(function(){
   //For the button on the user's profile page
-  $("#form_buttons").on("mouseover", function(event){
+  $(".view_buttons").on("mouseover", function(event){
     var $target = $(event.target);
     $target.closest("div").find('.hidden').show();
 
@@ -13,10 +13,10 @@ $(document).ready(function(){
     })
   })
 
-  $("#form_buttons").on("click", function(event){
+  $(".view_buttons").on("click", function(event){
     var $target = $(event.target);
     $current_divider = $("div")
-    $("span").hide();
+    $target.closest("div").find('.hidden').hide();
 
     $.ajax({
       url: $target.attr("action"),
@@ -26,7 +26,7 @@ $(document).ready(function(){
   })
 
   //For the delete buttons
-  $("#delete_buttons").on("click", function(event){
+  $(".delete_buttons").on("click", function(event){
     event.preventDefault();
     $target = $(event.target);
     $target.val("Deleting...");

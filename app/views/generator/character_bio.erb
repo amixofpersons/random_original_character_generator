@@ -9,7 +9,7 @@
   <a href ='/user/<%=@character.user_id%>'>Creator's</a> profile</p>
 
   <%if session[:user_id] == @character.user_id%>
-  <form action = '/character_bio/<%=@character.id%>' method ="POST" id = "form_buttons">
+  <form action = '/character_bio/<%=@character.id%>' method ="POST" class = "form_buttons">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete this character">
   </form>

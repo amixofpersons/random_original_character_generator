@@ -51,10 +51,11 @@ th {
   text-align: left;
 }
 
-#form_buttons{
+.view_buttons{
   display: inline-block;
 }
-#delete_buttons{
+
+.delete_buttons{
   display: inline-block;
 }
 

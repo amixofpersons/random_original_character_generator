@@ -14,7 +14,7 @@
         <!-- this goes through each user's OCs and displays them -->
       <div id = "biography">
         <li id ="character"><%=character.name%> :
-        <form action = '/character_bio/<%=character.id%>' method = "GET" id = "form_buttons">
+        <form action = '/character_bio/<%=character.id%>' method = "GET" class = "view_buttons">
           <input type="button" value="View Bio" id = "view">
         </form>
 
@@ -30,7 +30,7 @@
 
         <!-- This is where the delete button is -->
         <%if session[:user_id] == character.user_id%>
-          <form action = '/character_bio/<%=character.id%>' method ="POST" id = "delete_buttons">
+          <form action = '/character_bio/<%=character.id%>' method ="POST" class = "delete_buttons">
             <input type="hidden" name="_method" value="DELETE">
             <input type="submit" value="Delete this character">
           </form>
