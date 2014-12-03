@@ -7,7 +7,7 @@
   <p>Eye Color: <%=$random_character.eye_color%></p>
   <p>Personality: <%=$random_character.personality%></p>
   <form action = '/random' method = 'POST' class = 'form_buttons'>
-    <input type = 'submit' value = 'I like it!'>
-    <input type = 'submit' value = 'UGH too Mary Sue!'>
+    <input type = 'button' value = 'I like it!' id = 'like'>
+    <input type = 'button' value = 'UGH too Mary Sue!' onClick='history.go(0)' id = 'dislike'>
   </form>
 </div>

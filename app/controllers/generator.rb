@@ -10,6 +10,6 @@ get '/random' do
   erb :random
 end
 
-# post '/random' do
+post '/random' do
 
-# end
+end
