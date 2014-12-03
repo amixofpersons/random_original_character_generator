@@ -2,14 +2,23 @@ $(document).ready(function(){
   $("#form_buttons").on("click", function(event){
     var $target = $(event.target);
     $current_divider = $("div")
-    $("span").removeClass("hidden");
+    $("span").show();
 
     $.ajax({
       url: $target.attr("action"),
-      type: "GET"
+      type: "GET",
+      data: $("span")
     })
-    .done(function(){
-      $("span").addClass("hidden");
+  })
+  $("#form_buttons").on("dblclick", function(event){
+    var $target = $(event.target);
+    $current_divider = $("div")
+    $("span").hide();
+
+    $.ajax({
+      url: $target.attr("action"),
+      type: "GET",
+      data: $("span")
     })
   })
 });
