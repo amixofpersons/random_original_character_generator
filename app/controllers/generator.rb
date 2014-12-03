@@ -1,6 +1,8 @@
 require 'faker'
+
 #READ
 get '/random' do
+  #could this have gone in a post?
   $random_character = OriginalCharacter.create(title: Faker::Name.title,
               name: Faker::Name.name, age: Faker::Number.number(2),
               hair_color: Faker::Commerce.color,
@@ -16,22 +18,22 @@ get '/character_bio' do
   erb :'generator/all'
 end
 
-get '/character_bio/:id' do
+get '/character_bio/:id' do |id|
   if request.xhr?
   erb :'generator/character_bio'
   else
-    @character = OriginalCharacter.find(params[:id])
+    @character = OriginalCharacter.find(id)
     erb :'generator/character_bio'
   end
 end
 
 #DELETE
-delete'/character_bio/:id' do
+delete'/character_bio/:id' do |id|
   if request.xhr?
-    character = OriginalCharacter.find(params[:id])
+    character = OriginalCharacter.find(id)
     character.destroy
   else
-    character = OriginalCharacter.find(params[:id])
+    character = OriginalCharacter.find(id)
     character.destroy
     redirect back
   end

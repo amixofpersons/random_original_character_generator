@@ -1,3 +1,4 @@
+# seed to make sure associations work
 require 'faker'
 10.times do (User.create(name: Faker::Internet.user_name,
                          password: Faker::Internet.password))

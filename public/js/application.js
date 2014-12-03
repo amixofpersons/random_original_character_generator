@@ -11,8 +11,10 @@ $(document).ready(function(){
     })
   });
 
+  //seperated into different methods for clarity
+
   $(".view_buttons").click(function(event) {
-        $(".hidden").hide();
+    $(".hidden").hide();
   });
 
 
@@ -59,6 +61,7 @@ $(document).ready(function(){
     event.preventDefault();
   });
 
+  //For the random page to refresh if the user wants to create more OCs
   $('.refresh').click(function(event){
     event.preventDefault();
     location.reload();

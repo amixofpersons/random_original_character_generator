@@ -1,5 +1,6 @@
 <div class="container">
 <h1><center>THE OC GENERATOR</center></h1>
+<!-- if there is a user signed in -->
  <% if current_user %>
     <p>It's nice to see you here again!</p>
     <header><a href ='/logout'>LOGOUT</a> | <a href = '/user/<%=session[:user_id]%>'>PROFILE</a></header>
@@ -9,6 +10,7 @@
     <p><a href='/signup'>Signup</a> | <a href='/login'>Login</a> </p>
     <% end %>
 
+  <!-- div that displays a full list of already created characters on the index page -->
   <div class = "displayer">
     <form action = "/character_bio" method = "GET" class ="display_button">
       <input type = "submit" value = "Browse already made OC's!">
