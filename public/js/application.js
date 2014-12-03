@@ -14,6 +14,9 @@ $(document).ready(function(){
       })
     })
   });
+  $(".view_buttons").submit(function(event){
+    event.preventDefault();
+  })
 
   //For the delete buttons
   $(".delete_buttons").on("click", function(event){
@@ -45,5 +48,8 @@ $(document).ready(function(){
         $target.closest("div").find('.hidden').hide();
       });
     })
+    $(".display_all").submit(function(event){
+    event.preventDefault();
+  })
   })
 });
