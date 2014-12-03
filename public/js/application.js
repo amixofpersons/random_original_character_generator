@@ -1,6 +1,6 @@
 $(document).ready(function(){
   //For the button on the user's profile page
-  $("#form_buttons").on("click", function(event){
+  $("#form_buttons").on("mouseover", function(event){
     var $target = $(event.target);
     $target.closest("div").find('.hidden').show();
 
@@ -8,10 +8,12 @@ $(document).ready(function(){
       url: $target.attr("action"),
       type: "GET",
       data: $("span")
+    }).done(function(){
+      $target.val("View Bio")
     })
-  });
+  })
 
-  $("#form_buttons").on("dblclick", function(event){
+  $("#form_buttons").on("click", function(event){
     var $target = $(event.target);
     $current_divider = $("div")
     $("span").hide();
@@ -21,19 +23,21 @@ $(document).ready(function(){
       type: "GET",
       data: $("span")
     })
-  });
+  })
 
   //For the delete buttons
   $("#delete_buttons").on("click", function(event){
     event.preventDefault();
     $target = $(event.target);
-    // $target.attr("disabled", "true");
+    $target.val("Deleting...");
 
     $.ajax({
       url: $target.attr("action"),
       type: "DELETE"
-    }).done(function() {
-      $target.closest("div").find('#character').remove();
+    })
+
+    .done(function() {
+      $('#character').remove();
     });
   });
 

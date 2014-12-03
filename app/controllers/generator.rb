@@ -28,8 +28,9 @@ end
 #DELETE
 delete'/character_bio/:id' do
   if request.xhr?
+    character = OriginalCharacter.find(params[:id])
     character.destroy
-    redirect('/random')
+    redirect('/')
   else
     character = OriginalCharacter.find(params[:id])
     character.destroy
