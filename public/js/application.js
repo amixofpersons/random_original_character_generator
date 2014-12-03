@@ -18,9 +18,9 @@ $(document).ready(function(){
   //For the delete buttons
   $(".delete_buttons").on("click", function(event){
     event.preventDefault();
-    $target = $(event.target);
-    $target.attr("disabled", "true");
+    $target = $(this);
     $target.val("Deleting...");
+    console.log($target);
 
     $.ajax({
       url: $target.attr("action"),
