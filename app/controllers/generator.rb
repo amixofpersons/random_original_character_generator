@@ -11,5 +11,5 @@ get '/random' do
 end
 
 post '/random' do
-
+p $target
 end
