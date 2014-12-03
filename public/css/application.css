@@ -22,6 +22,7 @@ p{
 }
 
 li{
+  text-align: center;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -30,7 +31,10 @@ a{
   color: blue;
 }
 
-
+ul{
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
 
 .container {
   position: center;

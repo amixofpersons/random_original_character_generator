@@ -11,6 +11,11 @@ get '/random' do
   erb :'generator/random'
 end
 
+get '/character_bio' do
+  @characters = OriginalCharacter.all
+  erb :'generator/all'
+end
+
 get '/character_bio/:id' do
   if request.xhr?
   erb :'generator/character_bio'

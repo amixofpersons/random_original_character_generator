@@ -1,0 +1,6 @@
+<div class = "container">
+  <h1>Previously made characters:</h1>
+  <% @characters.each do |character|%>
+  <ul><a href = '/character_bio/<%=character.id%>'><%=character.name%></a></ul>
+    <%end%>
+</div>
