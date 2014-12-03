@@ -11,6 +11,11 @@ th {
 #form_buttons{
   display: inline-block;
 }
+#delete_buttons{
+  display: inline-block;
+}
+
+}
 .form_buttons{
   display: inline-block;
   margin-left: 30%;

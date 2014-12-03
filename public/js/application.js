@@ -1,11 +1,15 @@
 $(document).ready(function(){
   $("#form_buttons").on("click", function(event){
-    event.preventDefault();
     var $target = $(event.target);
-    $target.find('input[value="View Bio"]').val(Viewing Bio);
+    $current_divider = $("div")
+    $("span").removeClass("hidden");
 
     $.ajax({
-      url: $target.attr("action")
+      url: $target.attr("action"),
+      type: "GET"
+    })
+    .done(function(){
+      $("span").addClass("hidden");
     })
   })
 });

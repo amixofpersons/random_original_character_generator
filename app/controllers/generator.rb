@@ -12,8 +12,12 @@ get '/random' do
 end
 
 get '/character_bio/:id' do
-  @character = OriginalCharacter.find(params[:id])
+  if request.xhr?
   erb :'generator/character_bio'
+  else
+    @character = OriginalCharacter.find(params[:id])
+    erb :'generator/character_bio'
+  end
 end
 
 #DELETE
