@@ -1,0 +1,11 @@
+<div class="container">
+<h1><center>Hello World!</center></h1>
+ <% if current_user %>
+    <p>It's nice to see you here again!</p>
+    <header><a href ='/logout'>LOGOUT</a> | <a href = '/user/<%=session[:user_id]%>'>PROFILE</a></header>
+    <p>Start <a href = '/random'>creating!</a></p>
+    <% else %>
+    <p>Welcome to the OC generator! Start creating your characters by signing up now!</p>
+    <p><a href='/signup'>Signup</a> OR <a href='/login'>Login</a> now!</p>
+    <% end %>
+</div>
