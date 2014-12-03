@@ -11,21 +11,11 @@
     <p>This user hasn't generated any OC's yet!<p>
   <%else%>
     <% @user.original_characters.each do |character|%>
-      <ul class = "accordion">
         <li><%=character.name%> :
         <form action = '/character_bio/<%=character.id%>' method = "GET" id = "form_buttons">
           <input type="button" value="View Bio" id = "view">
         </form>
-        <!-- This is where the delete button is -->
-        <%if session[:user_id] == character.user_id%>
-          <form action = '/character_bio/<%=character.id%>' method ="POST" id = "delete_buttons">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="Delete this character">
-          </form>
-          <%end%>
-        </li>
-      </ul>
-      <span class = "hidden">
+         <span class = "hidden">
         <p>Title: <%=character.title%></p>
         <p>Name: <%=character.name%></p>
         <p>Age: <%=character.age%></p>
@@ -33,6 +23,14 @@
         <p>Eye Color: <%=character.eye_color%></p>
         <p>Personality: <%=character.personality%></p>
         </span>
+        <!-- This is where the delete button is -->
+        <%if session[:user_id] == character.user_id%>
+          <form action = '/character_bio/<%=character.id%>' method ="POST" id = "delete_buttons">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete this character">
+          </form>
+          <%end%>
+        </li><br>
     <%end%>
   <%end%>
 

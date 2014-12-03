@@ -1,8 +1,47 @@
+html{
+  background-image: url(http://www.themesltd.com/backgrounds/floral/seafoam_outlined_flowers.png);
+}
+
+h1{
+  font-size: 30px;
+  font-family: 'Fredoka One', cursive;
+}
+
+h3{
+  font-size: 20px;
+  font-family: 'Fredoka One', cursive;
+}
+
+h5{
+  font-size: 16px;
+  font-family: 'Fredoka One', cursive;
+}
+
+p{
+  font-family: 'Raleway', sans-serif;
+}
+
+li{
+  font-family: 'Raleway', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: blue;
+}
+
+
+
 .container {
+  position: center;
   margin: 20px auto;
   width: 600px;
+  min-height: 200px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border-radius: 13%;
+  text-align: center;
+  box-shadow: 10px 10px 10px gray;
+  background-color: #F0F8FF;
 }
 th {
   text-align: left;
