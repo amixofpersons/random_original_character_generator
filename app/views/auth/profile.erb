@@ -11,7 +11,7 @@
     <p>This user hasn't generated any OC's yet!<p>
   <%else%>
     <% @user.original_characters.each do |character|%>
-      <ul>
+      <ul class = "accordion">
         <li><%=character.name%>
           <form action = '/character_bio/<%=character.id%>' id = "form_buttons">
             <input type="submit" value="View Bio">

@@ -8,17 +8,12 @@ get '/random' do
               personality: Faker::Hacker.adjective,
               user_id: session[:user_id])
 
-  erb :random
+  erb :'generator/random'
 end
 
 get '/character_bio/:id' do
   @character = OriginalCharacter.find(params[:id])
-  erb :character_bio
-end
-
-#CREATE
-post '/random' do
-redirect('/user/')
+  erb :'generator/character_bio'
 end
 
 #DELETE
