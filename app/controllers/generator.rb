@@ -20,3 +20,10 @@ end
 post '/random' do
 redirect('/user/')
 end
+
+#DELETE
+delete'/character_bio/:id' do
+  character = OriginalCharacter.find(params[:id])
+  character.destroy
+  redirect('/')
+end

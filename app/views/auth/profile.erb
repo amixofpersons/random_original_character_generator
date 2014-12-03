@@ -10,12 +10,8 @@
     <% @user.original_characters.each do |character|%>
       <ul>
         <li><%=character.name%>
-        <form action = '/character_bio' method ="GET" id = "form_buttons">
+        <form action = '/character_bio/<%=character.id%>' method ="GET" id = "form_buttons">
         <input type="submit" value="View Bio">
-        |
-        <form action = '/character_bio' method ="POST" id = "form_buttons">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Delete">
         </li>
       </ul>
     <%end%>
