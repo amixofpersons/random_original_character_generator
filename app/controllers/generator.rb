@@ -1,5 +1,5 @@
 require 'faker'
-
+#READ
 get '/random' do
   $random_character = OriginalCharacter.create(title: Faker::Name.title,
               name: Faker::Name.name, age: Faker::Number.number(2),
@@ -11,6 +11,12 @@ get '/random' do
   erb :random
 end
 
+get '/character_bio/:id' do
+  @character = OriginalCharacter.find(params[:id])
+  erb :character_bio
+end
+
+#CREATE
 post '/random' do
 redirect('/user/')
 end

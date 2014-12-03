@@ -8,6 +8,9 @@ th {
   text-align: left;
 }
 
+#form_buttons{
+  display: inline-block;
+}
 .form_buttons{
   display: inline-block;
   margin-left: 30%;
