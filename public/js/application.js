@@ -8,12 +8,13 @@ $(document).ready(function(){
       url: $target.attr("action"),
       type: "GET",
       data: $("span")
-    }).done(function(){
-      $(".view_buttons").click(function(event) {
-        $(".hidden").hide();
-      });
-    });
+    })
   });
+
+  $(".view_buttons").click(function(event) {
+        $(".hidden").hide();
+  });
+
 
   $(".view_buttons").submit(function(event){
     event.preventDefault();
@@ -46,12 +47,13 @@ $(document).ready(function(){
       url: $target.attr('action'),
       type: "GET",
       data: $("span")
-    }).done(function(){
-      $(".display_button").click(function() {
-        $target.closest("div").find('.hidden').hide();
-      })
-    });
+    })
   });
+
+  $(".display_button").click(function() {
+    $target.closest("div").find('.hidden').hide();
+  })
+
   $(".display_button").submit(function(event){
     console.log(event);
     event.preventDefault();
