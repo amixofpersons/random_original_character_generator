@@ -1,6 +1,6 @@
 $(document).ready(function(){
   //For the button on the user's profile page
-  $(".view_buttons").on("mouseover", function(event){
+  $(".view_buttons").mouseover(function(event){
     var $target = $(event.target);
     $target.closest("div").find('.hidden').show();
 
@@ -9,19 +9,9 @@ $(document).ready(function(){
       type: "GET",
       data: $("span")
     }).done(function(){
-      $target.val("View Bio")
-    })
-  });
-
-  $(".view_buttons").on("click", function(event){
-    var $target = $(event.target);
-    $current_divider = $("div")
-    $target.closest("div").find('.hidden').hide();
-
-    $.ajax({
-      url: $target.attr("action"),
-      type: "GET",
-      data: $("span")
+      $(".view_buttons").click(function(event) {
+        $(".hidden").hide();
+      })
     })
   });
 
@@ -57,15 +47,4 @@ $(document).ready(function(){
       });
     })
   })
-
-  //  $(".display_all").on("dblclick", function(event){
-  //   event.preventDefault();
-  //   $target = $(event.target);
-  //   $(".hidden").hide();
-
-  //   $.ajax({
-  //     url: $target.attr("action"),
-  //     type: "GET"
-  //   })
-  // })
 });
