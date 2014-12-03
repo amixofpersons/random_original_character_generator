@@ -15,3 +15,7 @@ th {
   display: inline-block;
   margin-left: 30%;
 }
+
+.hidden{
+  display: none;
+}
