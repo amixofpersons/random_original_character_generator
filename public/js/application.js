@@ -52,4 +52,9 @@ $(document).ready(function(){
     event.preventDefault();
   })
   })
+
+  $('.refresh').click(function(event){
+    event.preventDefault();
+    location.reload();
+  })
 });
