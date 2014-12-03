@@ -6,8 +6,11 @@
   <p>Hair Color: <%=$random_character.hair_color%></p>
   <p>Eye Color: <%=$random_character.eye_color%></p>
   <p>Personality: <%=$random_character.personality%></p>
-  <form action ='/user/<%=$random_character.user_id%>' method = "GET" class = "form_buttons">
-    <input type = "submit" value ="View character">
-    <input type = "button" value = "Create another OC" onClick='history.go(0)'>
-  </form>
+
+  <div id = "random_page">
+    <form action ='/user/<%=$random_character.user_id%>' method = "GET" class = "form_buttons">
+      <input type = "submit" value ="View character">
+      <input type = "button" value = "Create another OC" onClick='history.go(0)'>
+    </form>
+  </div>
 </div>

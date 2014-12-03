@@ -20,7 +20,6 @@ $(document).ready(function(){
     event.preventDefault();
     $target = $(this);
     $target.val("Deleting...");
-    console.log($target);
 
     $.ajax({
       url: $target.attr("action"),
@@ -36,14 +35,14 @@ $(document).ready(function(){
   $(".display_all").mouseover(function(event){
     event.preventDefault();
     $target = $(event.target);
-    $(".hidden").show();
+    $target.closest("div").find('.hidden').show();
 
     $.ajax({
       url: $target.attr("action"),
       type: "GET"
     }).done(function(){
       $(".display_all").click(function(event) {
-        $(".hidden").hide();
+        $target.closest("div").find('.hidden').hide();
       });
     })
   })

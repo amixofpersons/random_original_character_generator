@@ -8,13 +8,16 @@
     <p>Welcome to the OC generator! Start creating your characters by signing up now!</p>
     <p><a href='/signup'>Signup</a> | <a href='/login'>Login</a> </p>
     <% end %>
-  <form action = "/character_bio" method = "GET" class ="display_button">
-    <input type = "button" value = "Browse already made OC's!" class = "display_all">
-  </form>
-  <span class= 'hidden'>
-  <% @characters = OriginalCharacter.all %>
-  <% @characters.each do |character|%>
-  <ul><a href = '/character_bio/<%=character.id%>'><%=character.name%></a></ul>
-  <%end%>
-  </span>
+
+  <div class = "displayer">
+    <form action = "/character_bio" method = "GET" class ="display_button">
+      <input type = "button" value = "Browse already made OC's!" class = "display_all">
+    </form>
+    <span class= 'hidden'>
+    <% @characters = OriginalCharacter.all %>
+    <% @characters.each do |character|%>
+      <ul><a href = '/character_bio/<%=character.id%>'><%=character.name%></a></ul>
+    <%end%>
+    </span>
+  </div>
 </div>
