@@ -29,7 +29,7 @@ end
 delete'/character_bio/:id' do
   if request.xhr?
     character.destroy
-    redirect('/user/#{session[:user_id]}')
+    redirect('/random')
   else
     character = OriginalCharacter.find(params[:id])
     character.destroy

@@ -67,3 +67,16 @@ th {
 .hidden{
   display: none;
 }
+
+#exit{
+  background-color: #D9E9FF;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 800px;
+  margin-left: 90%;
+  margin-right: auto;
+  text-align: center;
+  position: fixed;
+  box-shadow:  10px 10px 30px #888888;
+}

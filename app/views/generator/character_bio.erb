@@ -6,6 +6,7 @@
   <p>Hair Color: <%=@character.hair_color%></p>
   <p>Eye Color: <%=@character.eye_color%></p>
   <p>Personality: <%=@character.personality%></p>
+  <a href ='/user/<%=@character.user_id%>'>Creator's</a> profile</p>
 
   <%if session[:user_id] == @character.user_id%>
   <form action = '/character_bio/<%=@character.id%>' method ="POST" id = "form_buttons">
@@ -15,3 +16,8 @@
   <%end%>
 
 </div>
+<a href = '/character_bio'>
+<div id = "exit">
+  <p>Go Back</p>
+</div>
+</a>
