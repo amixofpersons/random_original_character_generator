@@ -9,7 +9,7 @@
     <p><a href='/signup'>Signup</a> | <a href='/login'>Login</a> </p>
     <% end %>
   <form action = "/character_bio" method = "GET" class ="display_button">
-    <input type = "button" value = "Browse already made OC's!" id = "display_all">
+    <input type = "button" value = "Browse already made OC's!" class = "display_all">
   </form>
   <span class= 'hidden'>
   <% @characters = OriginalCharacter.all %>

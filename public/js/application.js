@@ -11,7 +11,7 @@ $(document).ready(function(){
     }).done(function(){
       $target.val("View Bio")
     })
-  })
+  });
 
   $(".view_buttons").on("click", function(event){
     var $target = $(event.target);
@@ -23,12 +23,13 @@ $(document).ready(function(){
       type: "GET",
       data: $("span")
     })
-  })
+  });
 
   //For the delete buttons
   $(".delete_buttons").on("click", function(event){
     event.preventDefault();
     $target = $(event.target);
+    $target.attr("disabled", "true");
     $target.val("Deleting...");
 
     $.ajax({
@@ -37,12 +38,12 @@ $(document).ready(function(){
     })
 
     .done(function() {
-      $('#character').remove();
+      $target.closest("div").find('.character').remove();
     });
   });
 
   //For the index page to display all characters
-  $("#display_all").on("click", function(event){
+  $(".display_all").mouseover(function(event){
     event.preventDefault();
     $target = $(event.target);
     $(".hidden").show();
@@ -50,17 +51,21 @@ $(document).ready(function(){
     $.ajax({
       url: $target.attr("action"),
       type: "GET"
+    }).done(function(){
+      $(".display_all").click(function(event) {
+        $(".hidden").hide();
+      });
     })
   })
 
-   $("#display_all").on("dblclick", function(event){
-    event.preventDefault();
-    $target = $(event.target);
-    $(".hidden").hide();
+  //  $(".display_all").on("dblclick", function(event){
+  //   event.preventDefault();
+  //   $target = $(event.target);
+  //   $(".hidden").hide();
 
-    $.ajax({
-      url: $target.attr("action"),
-      type: "GET"
-    })
-  })
+  //   $.ajax({
+  //     url: $target.attr("action"),
+  //     type: "GET"
+  //   })
+  // })
 });
