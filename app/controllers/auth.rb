@@ -11,8 +11,8 @@ get '/signup' do
   erb :'auth/signup'
 end
 
-get '/user/:id' do
-  @user = User.find(params[:id])
+get '/user/:id' do |id|
+  @user = User.find(id)
   erb :'auth/profile'
 end
 
